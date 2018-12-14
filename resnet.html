@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    
+    <!-- MOBILE APP ICONS -->
+    
+    
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <link rel="icon" sizes="192x192" href="assets/icons/droid-icon.png">
+        
+        <meta name="application-name" content="CACC Portal">
+        <meta name="msapplication-square150x150logo" content="assets/icons/win-icon.png" />
+        
+        <link href="assets/icons/icon.png" rel="apple-touch-icon" />
+        <link href="assets/icons/startup.png" rel="apple-touch-startup-image" />
+    
+    
+    
+    
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>CACC Portal</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            function loaded()
+            {
+                roundtime();
+                currenttime();
+                
+            }
+            function currenttime(){
+                function checkTime(i) {
+                    return (i < 10) ? "0" + i : i;
+                }
+            
+                function startTime() {
+                    var today = new Date();
+                    document.getElementById('time').innerHTML = formatAMPM(today);
+                    var t = setTimeout(function () {
+                        startTime()
+                    }, 500);
+                }
+                startTime();
+            }
+            
+            function formatAMPM(date) {
+              var hours = date.getHours();
+              var minutes = date.getMinutes();
+              var seconds = date.getSeconds();
+              var ampm = hours >= 12 ? 'pm' : 'am';
+              hours = hours % 12;
+              hours = hours ? hours : 12; // the hour '0' should be '12'
+              minutes = minutes < 10 ? '0'+minutes : minutes;
+              seconds = seconds < 10 ? '0'+seconds : seconds;
+              var strTime = hours + ':' + minutes +':' + seconds + ' ' + ampm;
+              return strTime;
+            }
+
+            
+            function roundtime(){
+                function checkcurrentTime() {
+                    var today = new Date(),
+                        m = today.getMinutes();
+                        m = parseInt(m,10);
+                        var ratio = parseInt(m%15,10);
+                        if(ratio == 0){
+                            alert("Round Reminder");
+                        }
+                        
+                    var t = setTimeout(function () {
+                        checkcurrentTime()
+                    }, 60000);
+                }
+                checkcurrentTime();
+            }
+
+        
+    </script>
+    
+</head>
+<body onload="loaded()">
+    <header>
+      
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <button type="button" class="btn btn-primary">Consultant View</button>
+                   <a href="../secret/sup.html"><button type="button" class="btn btn-outline-primary">Go to Supervisor View</button></a>
+                </div>
+
+            </div>
+        </div>
+  
+    </header>
+    <!-- HEADER END-->
+    <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            
+
+            </div>
+
+            <div class="page-header">
+  <h1>CACC Portal</h1>
+</div>
+                     
+            </div>
+        </div>
+
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav center-block" >
+                           
+                            <li class="menuitem"><a class="text-center" href="index.html" data-toggle="tooltip" data-placement="top" title="Dashboard">
+                                  <span class="glyphicon glyphicon-home fa-2x"></span><br>Dashboard
+                               </a></li>
+                            <li class="menuitem"><a class="text-center" href="zed.html" data-toggle="tooltip" data-placement="top" title="ZED">
+                                <span class="glyphicon glyphicon-piggy-bank fa-2x"></span><br>Zed</a></li>
+                            <li class="menuitem"><a class="text-center" href="http://connect.rutgers.edu" target="_blank" data-toggle="tooltip" data-placement="top" title="Connect">
+                                <span class="glyphicon glyphicon-envelope fa-2x"></span><br>Connect</a></li>
+                            
+                            <li class="menuitem"><a class="menu-top-active text-center" href="resnet.html" data-toggle="tooltip" data-placement="top" title="Resnet">
+                                <span class="glyphicon glyphicon-wrench fa-2x"></span><br>Resnet</a></li>
+                                  
+                               <li class="menuitem"><a class="text-center" href="iml.html" data-toggle="tooltip" data-placement="top" title="IML">
+                                <span class="glyphicon glyphicon-calendar fa-2x"></span><br>IML</a></li>
+ 			<li class="menuitem"><a class="text-center" href="pts.html" data-toggle="tooltip" data-placement="top" title="PTS">
+                                <span class="glyphicon glyphicon-star fa-2x"></span><br>PTS</a></li>
+
+				<li class="menuitem"><a class="text-center" href="nagios.html" data-toggle="tooltip" data-placement="top" title="Nagios">
+                                <span class="glyphicon glyphicon-print fa-2x"></span><br>Nagios</a></li>
+
+                                  <li class="menuitem"><a class="text-center" href="contact.html" data-toggle="tooltip" data-placement="top" title="Information">
+                                <span class="glyphicon glyphicon-info-sign fa-2x"></span><br>Info</a></li>
+                                
+                                <li class="menuitem"><a class="text-center" href="https://sakai.rutgers.edu/portal/directtool/02c28b61-a787-421a-a3e7-406afcc8acc3/" target="_blank" data-toggle="tooltip" data-placement="top" title="Wiki">
+                                <span class="glyphicon glyphicon-question-sign fa-2x"></span><br>Wiki</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="page-head-line" class="col-md-12">
+                    <div style="text-align: left;">
+                                    <h3><b id="time"></b></h3>
+                                <!--    <p>Round Timer</p>-->
+                        </div>
+                </div>
+            </div>
+            <div  class="row">
+                <div class="col-md-12">
+                    <a href="https://sakai.rutgers.edu/portal/site/37dceff2-ebcf-4138-bf6c-1f908a0ccfe5" target="_blank">
+                    <div class="alert alert-info">Are you ResNet Certified yet? You can get a <b>raise up to $1</b>, if you become a dispatch consultant! Just <b>click here</b> to learn how to apply.
+                    </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <a href="https://hdrt.rutgers.edu/index.php" target="_blank">
+                 <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-one">
+                        <i  class="fa fa-comments-o dashboard-div-icon" ></i>
+                    
+                         <h5>HDRT</h5>
+                    </div>
+                </div>
+                </a>
+                
+                <a href="https://docs.google.com/a/scarletmail.rutgers.edu/forms/d/e/1FAIpQLSf4_MK_6xkHwBdaD7ahMx532tWSHAOFNH4iZA3w46m4evd10A/viewform" target="_blank">
+                 <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-two">
+                        <i  class="fa fa-users dashboard-div-icon" ></i>
+                      
+                         <h5>Walk-in Script</h5>
+                    </div>
+                </div>
+                </a>
+                
+                <a href="https://services.rutgers.edu/portal/nap/registermac.php" target="_blank">
+                 <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-three">
+                        <i  class="fa fa-unlock dashboard-div-icon" ></i>
+                       
+                         <h5>MAB</h5>
+                    </div>
+                </div>
+                </a>
+                
+                <a href="https://docs.google.com/a/scarletmail.rutgers.edu/forms/d/e/1FAIpQLSfSu8q4XdeC0a36ujUxfnB6kimg7zVx86EAR9Y3k7dIgZi42g/viewform" target="_blank">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="dashboard-div-wrapper bk-clr-four">
+                        <i  class="fa fa-wifi dashboard-div-icon" ></i>
+                        
+                         <h5>RuWireless Survey</h5>
+                    </div>
+                </div>
+                </a>
+
+            </div>
+          
+            
+        </div>
+    </div>
+    <!-- CONTENT-WRAPPER SECTION END-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy; 2016 CACC Portal
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+</html>

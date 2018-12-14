@@ -1,0 +1,28 @@
+{
+  "name": "caccportal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daphnecharles/caccportal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daphnecharles/caccportal/issues"
+  },
+  "homepage": "https://github.com/daphnecharles/caccportal#readme",
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "font-awesome": "^4.7.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
